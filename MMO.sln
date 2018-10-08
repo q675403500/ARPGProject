@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMO.CSharp", "MMO.CSharp.csproj", "{52A275C3-9DB2-85BD-BFE6-B361C4086D9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMO.CSharp.Editor", "MMO.CSharp.Editor.csproj", "{C6464A6B-6A0D-3A14-ACED-06AB10941585}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52A275C3-9DB2-85BD-BFE6-B361C4086D9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52A275C3-9DB2-85BD-BFE6-B361C4086D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52A275C3-9DB2-85BD-BFE6-B361C4086D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52A275C3-9DB2-85BD-BFE6-B361C4086D9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6464A6B-6A0D-3A14-ACED-06AB10941585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6464A6B-6A0D-3A14-ACED-06AB10941585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6464A6B-6A0D-3A14-ACED-06AB10941585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6464A6B-6A0D-3A14-ACED-06AB10941585}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

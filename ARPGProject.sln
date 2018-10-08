@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARPGProject.CSharp", "ARPGProject.CSharp.csproj", "{D0295236-D997-AD4F-3821-AE08CD3BD9BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARPGProject.CSharp.Editor", "ARPGProject.CSharp.Editor.csproj", "{4E849931-854C-37AD-D3FD-CA917440D8CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0295236-D997-AD4F-3821-AE08CD3BD9BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0295236-D997-AD4F-3821-AE08CD3BD9BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0295236-D997-AD4F-3821-AE08CD3BD9BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0295236-D997-AD4F-3821-AE08CD3BD9BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E849931-854C-37AD-D3FD-CA917440D8CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E849931-854C-37AD-D3FD-CA917440D8CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E849931-854C-37AD-D3FD-CA917440D8CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E849931-854C-37AD-D3FD-CA917440D8CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
