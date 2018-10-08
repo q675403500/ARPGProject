@@ -18,6 +18,9 @@ function PetPanel.InitPanel()
 	this.btnCreate = transform:Find("PetList/pet1/Create").gameObject;
 	this.PetIcon = transform:Find("PetList/pet1/Icon").gameObject;
 	this.PetName = transform:Find("PetList/pet1/Icon/Text").gameObject;
+	this.PetBg = transform:Find("PetList/pet1/Icon/Bg").gameObject;
+	this.Select = transform:Find("Headline").gameObject;
+	this.PetInfo = transform:Find("PetInfo").gameObject;
 end
 
 --单击事件--

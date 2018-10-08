@@ -10,7 +10,7 @@ local print_r = require "3rd/sproto/print_r"
 GetPetCtrl = {};
 local this = GetPetCtrl;
 
-local Sign;
+local GetPet;
 local transform;
 local gameObject;
 local Openwindow;
@@ -24,7 +24,7 @@ end
 function GetPetCtrl.Awake()
 	logWarn("GetPetCtrl.Awake--->>");
 
-	panelMgr:CreatePrefabPanel('Sign','Normal', this.OnCreate);
+	panelMgr:CreatePrefabPanel('GetPet','Normal', this.OnCreate);
 end
 
 --启动事件--
@@ -33,14 +33,14 @@ function GetPetCtrl.OnCreate(obj)
 	transform = obj.transform;
 	Openwindow = gameObject:GetComponent('OpenWindow');
 	Openwindow:Open('Normal');
-	Sign = gameObject:GetComponent('LuaBehaviour');
-	Sign:AddClick(SignPanel.btnSign, this.OnSign);
-	Sign:AddClick(SignPanel.btnClose, this.OnClose);
+	GetPet = gameObject:GetComponent('LuaBehaviour');
+	GetPet:AddClick(GetPetPanel.btnClose, this.OnClose);
+	GetPet:AddClick(GetPetPanel.btnGet, this.OnGet);
 	logWarn("Start lua--->>"..gameObject.name);
 end
 
 --单击事件--
-function GetPetCtrl.OnSign(go)
+function GetPetCtrl.OnGet(go)
 	soundMgr:PlayAudioClip('Audio/Button-3');
     this.TestSendSproto();
 end
@@ -51,22 +51,23 @@ function GetPetCtrl.OnClose(go)
 	--this.Close()
 end
 
-function GetPetCtrl.net_sign(res)
+function GetPetCtrl.net_bind(res)
+	if res["code"] and res["code"] == 0 then
+		this.OnClose(go)
+		networkMgr:SendSocketMsg("get account","");
+    end
 	UserData_login(res)
-	this.OnClose(go)
 end
 
 --测试发送SPROTO--
 function GetPetCtrl.TestSendSproto()
-	local name = SignPanel.Name:GetComponent('Text').text
-	local pass = SignPanel.Pass:GetComponent('Text').text
+	local name = GetPetPanel.Name:GetComponent('Text').text
 	local buffer = {
-		nickname = name,
-		password = pass
+		name = name
 	}
-	networkMgr:SendSocketMsg("register",TableToStr(buffer));
+	networkMgr:SendSocketMsg("bind pet",TableToStr(buffer));
 end
 --关闭事件--
 function GetPetCtrl.Close()
-	panelMgr:ClosePanel("Sign");
+	panelMgr:ClosePanel("GetPet");
 end

@@ -145,6 +145,12 @@ function Network.OnServerListenerCallback(str)
     Process(StrToTable(str))
 end
 
+function Network.WaitForSeconds()
+    --print(str)
+    ---local res = StrToTable(str)
+    Process(StrToTable(str))
+end
+
 --卸载网络监听--
 function Network.Unload()
     Event.RemoveListener(Protocal.Connect);

@@ -424,7 +424,16 @@ namespace LuaFramework
         /// </summary>
         public void SendSocketMsg(string ev, string data)
         {
-            Emit(ev, data, OnServerListenerCallback);
+            if (data == "")
+            {
+                Emit(ev, OnServerListenerCallback);
+            }
+            else
+            {
+                Emit(ev, data, OnServerListenerCallback);
+            }
+            
+
         }
         public void OnServerListenerCallback(JSONObject json)
         {
@@ -435,5 +444,11 @@ namespace LuaFramework
             //var Object = JsonConvert.DeserializeObject<CharacterListItem>(str);
             //Debug.Log(string.Format("OnServerListenerCallback data: {0}", json));
         }
+        public IEnumerator WaitForSeconds(float i)
+        {
+            yield return new WaitForSeconds(i);
+            CallMethod("WaitForSeconds");
+        }
+
     }
 }

@@ -4,6 +4,7 @@ require "Controller/SignCtrl"
 require "Controller/MessageCtrl"
 require "Controller/GetPetCtrl"
 require "Controller/PetCtrl"
+require "Controller/BattleCtrl"
 
 CtrlManager = {};
 local this = CtrlManager;
@@ -16,6 +17,7 @@ function CtrlManager.Init()
 	ctrlList[CtrlNames.Message] = MessageCtrl.New();
 	ctrlList[CtrlNames.GetPet] = GetPetCtrl.New();
 	ctrlList[CtrlNames.Pet] = PetCtrl.New();
+	ctrlList[CtrlNames.Battle] = BattleCtrl.New();
 
 	return this;
 end

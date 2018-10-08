@@ -53,7 +53,9 @@ end
 
 function SignCtrl.net_sign(res)
 	UserData_login(res)
-	this.OnClose(go)
+	if res["code"] and res["code"] == 0 then
+		this.OnClose(go)
+    end
 end
 
 --测试发送SPROTO--

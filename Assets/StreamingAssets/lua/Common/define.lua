@@ -5,6 +5,7 @@ CtrlNames = {
 	Message = "MessageCtrl",
 	GetPet = "GetPetCtrl",
 	Pet = "PetCtrl",
+	Battle = "BattleCtrl",
 }
 
 PanelNames = {
@@ -13,6 +14,7 @@ PanelNames = {
 	"MessagePanel",
 	"GetPetPanel",
 	"PetPanel",
+	"BattlePanel",
 }
 
 --协议类型--

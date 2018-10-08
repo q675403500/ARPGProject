@@ -2,6 +2,10 @@ local string_find = string.find
 local string_sub = string.sub
 local table_insert = table.insert
 local json = require "cjson"
+local __coupdate_timer = {}
+local __coupdate_toadd = {}
+local __pool = {}
+local action_pool = {}
 
 function ToStringEx(value)
     if type(value)=='table' then
@@ -151,4 +155,55 @@ function string.split(input, delimiter)
     end
     table_insert(arr, string_sub(input, pos))
     return arr
+end
+
+-- 等待秒数，并在Update执行完毕后resume
+-- 等同于Unity侧的yield return new WaitForSeconds
+function waitforseconds(seconds)
+	assert(type(seconds) == "number" and seconds >= 0)
+	local co = coroutine.running() or error ("coroutine.waitforsenconds must be run in coroutine")
+	local timer = GetCoTimer()
+	local action = __GetAction(co, timer)
+	
+	--timer:Init(seconds, __Action, action, true)
+ 	timer:Start()
+	action_map[co] = action
+ 	return coroutine.yield()
+end
+
+-- 获取CoUpdate定时器
+function GetCoTimer( delay, func, obj, one_shot, use_frame, unscaled)
+	assert(not __coupdate_timer[timer] and not __coupdate_toadd[timer])
+	local timer = InnerGetTimer( delay, func, obj, one_shot, use_frame, unscaled)
+	__coupdate_toadd[timer] = true
+	return timer
+end
+
+-- 获取定时器
+function InnerGetTimer( delay, func, obj, one_shot, use_frame, unscaled)
+	local timer = nil
+	if #__pool > 0 then
+		timer = table.remove(__pool)
+		if delay and func then
+			timer:Init(delay, func, obj, one_shot, use_frame, unscaled)
+		end
+	else
+		timer = Timer.New(delay, func, obj, one_shot, use_frame, unscaled)
+	end
+	return timer
+end
+
+function __GetAction(co, timer, func, args, result)
+	local action = nil
+	if #action_pool > 0 then
+		action = table.remove(action_pool)
+	else
+		action = {false, false, false, false, false}
+	end
+	action.co = co and co or false
+	action.timer = timer and timer or false
+	action.func = func and func or false
+	action.args = args and args or false
+	action.result = result and result or false
+	return action
 end

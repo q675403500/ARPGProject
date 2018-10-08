@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3625088192
+CRC: 4227281021
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 2b44cb7afd9873c15d36d7b262b2cf33
+    Hash: 88f63786cd0888456945e9e0e35dc176
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b67a6ad8f37515bc4a76dc6ea9fd7621
+    Hash: b31651a6ee39a081bebae8497517e531
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -24,12 +24,6 @@ ClassTypes:
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-- Class: 114
-  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-- Class: 114
-  Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-- Class: 114
   Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 - Class: 114
   Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
@@ -37,6 +31,12 @@ ClassTypes:
   Script: {fileID: 575553740, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 - Class: 114
   Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+- Class: 114
+  Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -53,6 +53,7 @@ Assets:
 - Assets/LuaFramework/AssetsPackage/UI/Prefabs/LoginPanel.prefab
 - Assets/LuaFramework/AssetsPackage/UI/Prefabs/MessagePanel.prefab
 - Assets/LuaFramework/AssetsPackage/UI/Prefabs/SignPanel.prefab
+- Assets/LuaFramework/AssetsPackage/UI/Prefabs/BattlePanel.prefab
 - Assets/LuaFramework/AssetsPackage/UI/Prefabs/PetPanel.prefab
 - Assets/LuaFramework/AssetsPackage/UI/Prefabs/GetPetPanel.prefab
 Dependencies: []
