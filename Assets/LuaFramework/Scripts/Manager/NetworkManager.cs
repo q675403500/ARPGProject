@@ -18,9 +18,9 @@ namespace LuaFramework
         static Queue<KeyValuePair<int, ByteBuffer>> mEvents = new Queue<KeyValuePair<int, ByteBuffer>>();
 
 
-        //public string url = "ws://193.112.132.226:3001/socket.io/?EIO=4&transport=websocket";
+        public string url = "ws://193.112.132.226:3001/socket.io/?EIO=4&transport=websocket";
         //public string url = "ws://127.0.0.1:3001/socket.io/?EIO=4&transport=websocket";
-        public string url = "ws://118.24.169.185:3001/socket.io/?EIO=4&transport=websocket";
+        //public string url = "ws://118.24.169.185:3001/socket.io/?EIO=4&transport=websocket";
         public bool autoConnect = true;
         public int reconnectDelay = 5;
         public float ackExpirationTime = 1800f;
@@ -432,8 +432,6 @@ namespace LuaFramework
             {
                 Emit(ev, data, OnServerListenerCallback);
             }
-            
-
         }
         public void OnServerListenerCallback(JSONObject json)
         {
@@ -444,10 +442,9 @@ namespace LuaFramework
             //var Object = JsonConvert.DeserializeObject<CharacterListItem>(str);
             //Debug.Log(string.Format("OnServerListenerCallback data: {0}", json));
         }
-        public IEnumerator WaitForSeconds(float i)
+        public void SetUrl(string ip)
         {
-            yield return new WaitForSeconds(i);
-            CallMethod("WaitForSeconds");
+            url = "ws://" + ip + "/socket.io/?EIO=4&transport=websocket";
         }
 
     }

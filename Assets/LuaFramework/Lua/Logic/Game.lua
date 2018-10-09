@@ -25,6 +25,7 @@ local game;
 local transform;
 local gameObject;
 local WWW = UnityEngine.WWW;
+--local ip = "193.112.132.226:3001";
 
 function Game.InitViewPanels()
 	for i = 1, #PanelNames do
@@ -36,18 +37,11 @@ end
 function Game.OnInitOK()
     AppConst.SocketPort = 2012;
     AppConst.SocketAddress = "127.0.0.1";
-    networkMgr:SendConnect();
-
+    --AppConst.WebUrl = "http://118.24.169.185/StreamingAssetspc/";
+    --networkMgr:SendConnect();
+    --networkMgr:SetUrl(ip);
     --注册LuaView--
     this.InitViewPanels();
-
-    --this.test_class_func();
-    --this.test_pblua_func();
-    --this.test_cjson_func();
-    --this.test_pbc_func();
-    --this.test_lpeg_func();
-    --this.test_sproto_func();
-    --coroutine.start(this.test_coroutine);
     CtrlManager.Init();
     CreatePrefab(CtrlNames.Login)
     UserData_init();

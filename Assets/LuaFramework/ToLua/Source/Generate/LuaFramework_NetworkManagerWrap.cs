@@ -19,7 +19,7 @@ public class LuaFramework_NetworkManagerWrap
 		L.RegFunction("Emit", Emit);
 		L.RegFunction("SendSocketMsg", SendSocketMsg);
 		L.RegFunction("OnServerListenerCallback", OnServerListenerCallback);
-		L.RegFunction("WaitForSeconds", WaitForSeconds);
+		L.RegFunction("SetUrl", SetUrl);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.RegVar("url", get_url, set_url);
@@ -303,16 +303,15 @@ public class LuaFramework_NetworkManagerWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int WaitForSeconds(IntPtr L)
+	static int SetUrl(IntPtr L)
 	{
 		try
 		{
 			ToLua.CheckArgsCount(L, 2);
 			LuaFramework.NetworkManager obj = (LuaFramework.NetworkManager)ToLua.CheckObject<LuaFramework.NetworkManager>(L, 1);
-			float arg0 = (float)LuaDLL.luaL_checknumber(L, 2);
-			System.Collections.IEnumerator o = obj.WaitForSeconds(arg0);
-			ToLua.Push(L, o);
-			return 1;
+			string arg0 = ToLua.CheckString(L, 2);
+			obj.SetUrl(arg0);
+			return 0;
 		}
 		catch (Exception e)
 		{
