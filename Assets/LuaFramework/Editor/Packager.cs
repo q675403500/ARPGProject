@@ -76,6 +76,7 @@ public class Packager {
             HandleExampleBundle();
         }
         string resPath = "Assets/" + AppConst.AssetDir;
+        if (!Directory.Exists(resPath)) Directory.CreateDirectory(resPath);
         BuildPipeline.BuildAssetBundles(resPath, maps.ToArray(), BuildAssetBundleOptions.None, target);
         BuildFileIndex();
 
@@ -161,11 +162,8 @@ public class Packager {
     static void HandleExampleBundle() {
         string resPath = AppDataPath + "/" + AppConst.AssetDir + "/";
         if (!Directory.Exists(resPath)) Directory.CreateDirectory(resPath);
-        //AddBuildMap("prompt" + AppConst.ExtName, "*.prefab", "Assets/LuaFramework/Examples/Builds/Prompt");
         AddBuildMap(AppConst.Prefab + AppConst.ExtName, "*.prefab", "Assets/LuaFramework/AssetsPackage/UI/Prefabs");
-        //AddBuildMap("Sign" + AppConst.ExtName, "*.prefab", "Assets/LuaFramework/AssetsPackage/UI/Prefabs/Sign");
-        //AddBuildMap("prompt_asset" + AppConst.ExtName, "*.png", "Assets/LuaFramework/Examples/Textures/Prompt");
-        //AddBuildMap("shared_asset" + AppConst.ExtName, "*.png", "Assets/LuaFramework/Examples/Textures/Shared");
+        //AddBuildMap(AppConst.Sprite + AppConst.ExtName, "*.png", "Assets/LuaFramework/AssetsPackage/UI/Image/Button");
     }
 
     /// <summary>

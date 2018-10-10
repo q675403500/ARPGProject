@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-F:/ARPGProject/ARPGProject/狗戴妖怪/狗戴妖怪.apk
+F:/1111.apk
 SceneListBegin?
 Assets/LuaFramework/Scenes/LogoScene.unity
 Assets/LuaFramework/Scenes/LoginScene.unity
@@ -170,3 +170,4 @@ bc64c66d436fc11f13717e172e9d6a7d Assembly-CSharp.dll:.LogoPlayer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:LuaFramework.SoundManager
 5c4f9e56bd9cd334335c501ab4489b28 Assembly-CSharp.dll:.OpenWindow
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TestSocketIO
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:LuaFramework.UtilManager

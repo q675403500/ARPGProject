@@ -49,7 +49,13 @@ namespace LuaFramework {
         public static SoundManager GetSoundManager() {
             return AppFacade.Instance.GetManager<SoundManager>(ManagerName.Sound);
         }
-
+        /// <summary>
+        /// Util
+        /// </summary>
+        public static UtilManager GetUtilManager()
+        {
+            return AppFacade.Instance.GetManager<UtilManager>(ManagerName.Util);
+        }
 
         /// <summary>
         /// pbc/pblua函数回调
@@ -59,7 +65,7 @@ namespace LuaFramework {
             if (func != null) func.Call(data);
             Debug.LogWarning("OnCallLuaFunc length:>>" + data.buffer.Length);
         }
-
+     
         /// <summary>
         /// cjson函数回调
         /// </summary>

@@ -45,7 +45,6 @@ namespace LuaFramework {
                 if (initOK != null) initOK();
             });
         }
-
         public void LoadPrefab(string abName, string assetName, Action<UObject[]> func) {
             LoadAsset<GameObject>(abName, new string[] { assetName }, func);
         }
@@ -56,6 +55,15 @@ namespace LuaFramework {
 
         public void LoadPrefab(string abName, string[] assetNames, LuaFunction func) {
             LoadAsset<GameObject>(abName, assetNames, null, func);
+        }
+
+        public AssetBundle LoadBundle(string name)
+        {
+            AssetBundleInfo bundleInfo = GetLoadedAssetBundle(name);
+            if (bundleInfo == null)
+                return null;
+            else
+                return bundleInfo.m_AssetBundle;
         }
 
         string GetRealAssetPath(string abName) {
