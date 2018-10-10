@@ -173,7 +173,8 @@ public static class CustomSettings
         _GT(typeof(TimerManager)),
         _GT(typeof(ThreadManager)),
         _GT(typeof(NetworkManager)),
-        _GT(typeof(ResourceManager)),		  
+        _GT(typeof(ResourceManager)),	
+	    _GT(typeof(UtilManager)),	
     };
 
     public static List<Type> dynamicList = new List<Type>()

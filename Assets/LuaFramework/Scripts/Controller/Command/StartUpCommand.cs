@@ -24,5 +24,6 @@ public class StartUpCommand : ControllerCommand {
         AppFacade.Instance.AddManager<ThreadManager>(ManagerName.Thread);
         AppFacade.Instance.AddManager<ObjectPoolManager>(ManagerName.ObjectPool);
         AppFacade.Instance.AddManager<GameManager>(ManagerName.Game);
+        AppFacade.Instance.AddManager<UtilManager>(ManagerName.Util);
     }
 }

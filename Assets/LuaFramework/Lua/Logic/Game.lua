@@ -14,6 +14,7 @@ require "Logic/LuaClass"
 require "Logic/CtrlManager"
 require "Common/functions"
 require "Common/tools"
+require "Common/AtlasConfig"
 require "Controller/LoginCtrl"
 require "Data/UserData"
 

@@ -21,6 +21,7 @@ public class LuaFramework_AppConstWrap
 		L.RegVar("AppPrefix", get_AppPrefix, null);
 		L.RegVar("ExtName", get_ExtName, null);
 		L.RegVar("Prefab", get_Prefab, null);
+		L.RegVar("Sprite", get_Sprite, null);
 		L.RegVar("AssetDir", get_AssetDir, null);
 		L.RegVar("WebUrl", get_WebUrl, null);
 		L.RegVar("UserId", get_UserId, set_UserId);
@@ -116,6 +117,20 @@ public class LuaFramework_AppConstWrap
 		try
 		{
 			LuaDLL.lua_pushstring(L, LuaFramework.AppConst.Prefab);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_Sprite(IntPtr L)
+	{
+		try
+		{
+			LuaDLL.lua_pushstring(L, LuaFramework.AppConst.Sprite);
 			return 1;
 		}
 		catch (Exception e)

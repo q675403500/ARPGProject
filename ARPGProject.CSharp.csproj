@@ -275,6 +275,7 @@
     <Compile Include="Assets\LuaFramework\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\LuaFramework\Scripts\Manager\ThreadManager.cs" />
     <Compile Include="Assets\LuaFramework\Scripts\Manager\TimerManager.cs" />
+    <Compile Include="Assets\LuaFramework\Scripts\Manager\UtilManager.cs" />
     <Compile Include="Assets\LuaFramework\Scripts\Network\ByteBuffer.cs" />
     <Compile Include="Assets\LuaFramework\Scripts\Network\Converter.cs" />
     <Compile Include="Assets\LuaFramework\Scripts\Network\Protocal.cs" />
@@ -357,6 +358,7 @@
     <Compile Include="Assets\LuaFramework\ToLua\Source\Generate\LuaFramework_SoundManagerWrap.cs" />
     <Compile Include="Assets\LuaFramework\ToLua\Source\Generate\LuaFramework_ThreadManagerWrap.cs" />
     <Compile Include="Assets\LuaFramework\ToLua\Source\Generate\LuaFramework_TimerManagerWrap.cs" />
+    <Compile Include="Assets\LuaFramework\ToLua\Source\Generate\LuaFramework_UtilManagerWrap.cs" />
     <Compile Include="Assets\LuaFramework\ToLua\Source\Generate\LuaFramework_UtilWrap.cs" />
     <Compile Include="Assets\LuaFramework\ToLua\Source\Generate\LuaInterface_DebuggerWrap.cs" />
     <Compile Include="Assets\LuaFramework\ToLua\Source\Generate\LuaInterface_InjectTypeWrap.cs" />
@@ -504,6 +506,10 @@
     <Compile Include="Assets\SocketIO\WebsocketSharp\WebSocketStream.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\BuildReport\BuildReportToolOptions.xml" />
+    <None Include="Assets\BuildReport\README.txt" />
+    <None Include="Assets\BuildReport\Scripts\Editor\FuzzyString\License.txt" />
+    <None Include="Assets\BuildReport\VERSION.txt" />
     <None Include="Assets\JsonDotNet\Assemblies\AOT\Newtonsoft.Json.XML" />
     <None Include="Assets\JsonDotNet\Assemblies\Standalone\Newtonsoft.Json.XML" />
     <None Include="Assets\JsonDotNet\Assemblies\Windows\Newtonsoft.Json.XML" />

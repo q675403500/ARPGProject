@@ -36,6 +36,8 @@ resMgr = LuaHelper.GetResManager();
 panelMgr = LuaHelper.GetPanelManager();
 soundMgr = LuaHelper.GetSoundManager();
 networkMgr = LuaHelper.GetNetManager();
+util = LuaHelper.GetUtilManager();
+
 
 WWW = UnityEngine.WWW;
 GameObject = UnityEngine.GameObject;
